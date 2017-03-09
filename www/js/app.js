@@ -8,6 +8,11 @@ angular.module('ionicApp', ['ionic'])
     templateUrl: 'templates/intro.html',
     controller: 'IntroCtrl'
   })
+  .state('registro', {
+    url: '/registro',
+    templateUrl: 'templates/register.html',
+    controller: 'registerCtrl'
+  })
   .state('main', {
     url: '/main',
     templateUrl: 'templates/main.html',
@@ -17,9 +22,12 @@ angular.module('ionicApp', ['ionic'])
   $urlRouterProvider.otherwise("/");
 
 })
+.controller('registerCtrl', function(){
 
+  
+})
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
- 
+
   // Called to navigate to the main app
   $scope.startApp = function() {
     $state.go('main');
@@ -37,9 +45,18 @@ angular.module('ionicApp', ['ionic'])
   };
 })
 
-.controller('MainCtrl', function($scope, $state) {
+.controller('MainCtrl', function($scope, $state, $http) {
+  $scope.data = {};
+
+  $scope.submit = function(){
+      var link = 'http://nikola-breznjak.com/_testings/ionicPHP/api.php';
+
+      $http.post(link, {username : $scope.data.username, password : $scope.data.password}).then(function (res){
+          $scope.response = res.data;
+      });
+  };
   console.log('MainCtrl');
-  
+
   $scope.toIntro = function(){
     $state.go('intro');
   }

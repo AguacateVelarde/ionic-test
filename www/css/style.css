@@ -5,8 +5,12 @@
   src:url('Lemon Tuesday.otf');
   font-family: "Lemon";
 }
+@font-face{
+  src:url('DroidSans.ttf');
+  font-family: "Droid";
+}
 body {
- font-family: Merriweather; !important
+ font-family: Droid; !important
 }
 .slider {
   height: 100%;
@@ -17,7 +21,7 @@ body {
   background-color: #fff;
   text-align: center;
 
-  font-family: "Merriweather", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: Droid;
   font-weight: 300;
 }
 
@@ -36,7 +40,7 @@ body {
 #list ol li {
   text-align: left;
   list-style: decimal;
-  margin: 10px 0px; 
+  margin: 10px 0px;
 }
 
 .button.ng-hide{
@@ -44,7 +48,7 @@ body {
 }
 
 ion-slide:nth-child(1){
- 
+
 }
 ion-slide:nth-child(2){
   background-image:url('../img/back2.jpg');
@@ -54,7 +58,7 @@ ion-slide:nth-child(2){
 ion-slide:nth-child(3){
   background-image:url('../img/back3.jpg');
 }
-video { 
+video {
     position: fixed;
     top: 50%;
     left: 50%;
